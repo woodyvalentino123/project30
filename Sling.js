@@ -10,6 +10,9 @@ class Sling{
         this.chain = Constraint.create(options);
         World.add(world, this.chain);
     }
+    attach(bodyA){
+        this.chain.bodyA = bodyA; 
+     }
 
     display(){
         if(this.chain.bodyA){
