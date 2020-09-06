@@ -6,15 +6,20 @@ class Box extends BaseClass{
 }
 display(){
     if(this.body.speed<3){
-        super.display();
+        var pos = this.body.position
+        var angle = this.body.angle
+        push();
+       translate(pos.x,pos.y)
+       rotate(angle)
+       fill("blue")
+        rectMode(CENTER)
+        rect(0,0,30,30);
+        pop();
     }else{
         World.remove(world,this.body);
-        var pos = this.body.position
+         
         push();
         this.visibility = this.visibility-5;
-        rect(pos.x,pos.y,30,30)
-        tint(255,this.visibility);
-        rect(pos.x,pos.y,30,30);
         pop();
     }
 
